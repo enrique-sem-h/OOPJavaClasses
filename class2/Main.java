@@ -8,5 +8,8 @@ public class Main {
         calc.sum(calc.num1, calc.num2);
 
         System.out.println("Sum: " + calc.sum(5.5, 1.2));
+        System.out.println("Sum: " + calc.sub(5.5, 1.2));
+        System.out.println("Sum: " + calc.multiply(5.0, 10.0));
+        System.out.println("Sum: " + calc.divide(5.0, 2.0));
     }
 }
