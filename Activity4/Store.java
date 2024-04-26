@@ -3,11 +3,9 @@ package Activity4;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Store {
-	private ArrayList<Product> products;
-	
+public class Store extends productHolder{
 	public Store() {
-	    this.products = new ArrayList<>();
+		super();
 	}
 	
 	public void addProduct(Product product) {

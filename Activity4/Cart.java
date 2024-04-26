@@ -2,24 +2,22 @@ package Activity4;
 
 import java.util.ArrayList;
 
-public class Cart {
-	private ArrayList<Product> cartProducts;
+public class Cart extends productHolder{
 	private Double cartTotal;
 	
 	public Cart() {
-		this.cartProducts = new ArrayList<Product>();
 		this.cartTotal = 0.0;
 	}
 	
 	public void addToCart(Product product) {
-		this.cartProducts.add(product);
+		this.products.add(product);
 		this.cartTotal += product.price;
 	}
 	
 	public void removeFirstItem(Product product) {
-		for (Product p : this.cartProducts) {
+		for (Product p : this.products) {
 			if (p == product) {
-				this.cartProducts.remove(product);
+				this.products.remove(product);
 				break;
 			}
 		}
@@ -28,7 +26,7 @@ public class Cart {
 	public void listProducts() {
 		String cartItems = "";
 		
-		for(Product p : this.cartProducts) {
+		for(Product p : this.products) {
 			cartItems += p.name + "\n";
 		}
 		System.out.println(cartItems);
@@ -36,7 +34,7 @@ public class Cart {
 	
 	public void placeOrder(Client client) {
 		if (client.balance >= cartTotal){
-		this.cartProducts.clear();
+		this.products.clear();
 		this.cartTotal = 0.0;
 		System.out.println("your items will be delivered soon enough");
 		}
